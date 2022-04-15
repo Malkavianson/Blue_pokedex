@@ -1,0 +1,24 @@
+{
+  "name": "blue_pokedex",
+  "version": "1.0.0",
+  "description": "Projeto Pokedex Blue",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malkavianson/Blue_pokedex.git"
+  },
+  "author": "MalkavianSon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malkavianson/Blue_pokedex/issues"
+  },
+  "homepage": "https://github.com/Malkavianson/Blue_pokedex#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
