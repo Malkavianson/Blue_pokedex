@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+	
+		<title>Blue - Pokedex</title>
+		
+		<meta charset='uft-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<!-- <link rel='icon' href='./src/img/icon.png'> -->
+		
+		<link rel='stylesheet' href='style.css'>
+
+	</head>
+	
+	<body>
+		<header>
+			<div>
+				<h1>Smart Pokedex</h1>
+			</div>
+		</header>
+		<main>
+			<section id='deck'>
+				<div id='pokedex'>
+					<div class='cards'>
+						<% pokedex.forEach((pokemon) => { %>
+							<div class='pokemon'>
+								<div>
+									<h1><%= pokemon.name%></h1>
+									<h3><%= pokemon.type%></h2>
+								</div>
+								<img src="<%= pokemon.picture %>" alt="<%= pokemon.name%> picture">
+								<p><%= pokemon.description%></p>
+							</div>
+						<% }) %>
+					</div>
+				</div>
+				<div id='listing'>
+					<div class='lander'>
+						<% pokedex.forEach((pokemon) =>{ %>
+						<div id="i<%= pokemon.id %>" class='mini' onclick='changing(id)'>
+							<img src="<%= pokemon.picture %>" alt="<%= pokemon.name%> picture">
+						</div>
+						<% }) %>
+					</div>
+				</div>
+			</section>
+			<section id='cadastro'>
+				<div>
+					<h2>Cadastre um novo pokemon</h2>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<a href='https://github.com/Malkavianson'>Created by @Malkavianson</p>
+		</footer>
+		<script src="scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+	<head>
+	
+		<title>Blue - Pokedex</title>
+		
+		<meta charset='uft-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<!-- <link rel='icon' href='./src/img/icon.png'> -->
+		
+		<link rel='stylesheet' href='style.css'>
+
+	</head>
+	
+	<body>
+		<header>
+			<div>
+				<h1>Smart Pokedex</h1>
+			</div>
+		</header>
+		<main>
+			<section id='cadastro'>
+				<h2>Register a new pokemon!</h2>
+				<form action='/add' method='POST'>
+					<div>
+						<label for='name'>Name:</label>
+						<input type='text' id='name' name='name'>
+					</div>
+					<div>
+						<label for='type'>Type:</label>
+						<input type='text' id='type' name='type'>
+					</div>
+					<div>
+						<label for='description'>Description:</label>
+						<input type='text' id='description' name='description'>
+					</div>
+					<div>
+						<label for='picture'>Link for pokemon's image:</label>
+						<input type='text' id='picture' name='picture'>
+					</div>
+					<div>
+						<button id='recordBtn' type='submit'>Record</button>
+					</div>
+				</form>
+			</section>
+		<footer>
+			<a href='https://github.com/Malkavianson'>Created by @Malkavianson</p>
+		</footer>
+		<script src="scripts.js"></script>
+	</body>
+</html>

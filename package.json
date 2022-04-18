@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js -e js,html,css,ejs"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Malkavianson/Blue_pokedex.git"
@@ -18,7 +19,10 @@
   },
   "homepage": "https://github.com/Malkavianson/Blue_pokedex#readme",
   "dependencies": {
-    "express": "^4.17.3",
+    "ejs": "^3.0.2",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
