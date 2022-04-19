@@ -257,49 +257,61 @@ div#listing{
 }
 
 nav#navbar{
-	width: 50%;
-	height: 50%;
-	background: white;
-	color: rgba(0, 0, 0, 0.87);
-	-webkit-clip-path: circle(5.5% at 10% 10%);
-	clip-path: circle(5.5% at 10% 10%);
-	-webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
-	transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+	width: 								50%;
+	height: 							50%;
+	background: 						white;
+	color: 								rgba(0, 0, 0, 0.87);
+	-webkit-clip-path: 					circle(5.5% at 10% 10%);
+	clip-path: 							circle(5.5% at 10% 10%);
+	-webkit-transition: 				-webkit-clip-path 0.5625s, clip-path 0.375s;
+	transition: 						-webkit-clip-path 0.5625s, clip-path 0.375s;
 }
 
 nav#navbar:hover{
 	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-	-webkit-transition-duration: 0.75s;
-	transition-duration: 0.75s;
-	-webkit-clip-path: circle(60% at 5% 13%);
-	clip-path: circle(60% at 5% 13%);
+	transition-timing-function: 		ease-out;
+	-webkit-transition-duration: 		0.75s;
+	transition-duration: 				0.75s;
+	-webkit-clip-path: 					circle(60% at 5% 13%);
+	clip-path: 							circle(60% at 5% 13%);
 }
-
+ul#nav{
+	height:								50%;
+	width:								50%;
+}
 li{
-	display: block;
-	line-height: 50px;
-	padding: 0 20px;
-	color: inherit;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	height: 							30%;
+    width: 								100%;
+    display: 							flex;
+	font-size:							1.5rem;
+    line-height: 						100%;
+    padding: 							0% 20%;
+    cursor: 							pointer;
+    -webkit-user-select: 				none;
+    -moz-user-select: 					none;
+    -ms-user-select: 					none;
+    user-select: 						none;
+    align-items: 						center;
+}
+li>a{
+	color:								black;
+}
+li:hover{ 
+	background: 						#ffe082;
 }
 
-li:hover{ background: #ffe082; }
-
-li:active{ background: #ffca28; }
+li:active{
+	background: 						#ffca28;
+}
 
 .pokeball{
-	height: 1%;
-	width: 5%;
-	padding: 8% 7%;
-	cursor: pointer;
-	-webkit-transform-origin: 3.2% 2.4%;
-	-ms-transform-origin: 3.2% 2.4%;
-	transform-origin: 3.2% 2.4%;
+	height: 							1%;
+	width: 								5%;
+	padding: 							8% 7%;
+	cursor: 							pointer;
+	-webkit-transform-origin: 			3.2% 2.4%;
+	-ms-transform-origin: 				3.2% 2.4%;
+	transform-origin: 					3.2% 2.4%;
 }
 
 
