@@ -2,7 +2,7 @@ import express from 'express';
 import poke from './poke.js';
 import path from 'path';
 const app = express();
-const __dirname = path.resolve();
+const __dirname = path.resolve(path.dirname(''));
 const pokedex = poke.pokedex;
 
 app.set("view engine", "ejs");
@@ -13,10 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req,res) => {
 	res.render ('index', {pokedex});
 });
-
-// app.get('/index', (req,res) => {
-	// res.send(pokedex[1].name);
-// });
+app.get('/register', (req,res) => {
+	res.render ('cadastro');
+});
+app.get('/details', (req,res) => {
+	res.render ('detalhes');
+});
 
 app.post('/add', (req,res) => {
 	const pokemon = req.body;

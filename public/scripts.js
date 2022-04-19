@@ -19,15 +19,6 @@ let isDragging = false,
 	prevTranslate = 0,
 	animationID = 0,
 	currentIndex = 0;
-
-// minis.forEach((mini, i) => {
-	// const img = mini.querySelector('img')
-	// img.addEventListener('dragstart', (el) => el.
-	// preventDefault())
-
-	// mini.addEventListener('touchend', changing(i))
-	// mini.addEventListener('mouseup', changing(i))
-// });	
 	
 slides.forEach((slide, index) => {
 	const slideImage = slide.querySelector('img')
@@ -46,10 +37,12 @@ slides.forEach((slide, index) => {
 });
 
 //desativar o menu de contexto
-document.querySelector('#deck').oncontextmenu = function(event){
-	event.preventDefault();
-	event.stopPropagation();
-	return false
+if(document.querySelector('#deck')!=null){
+	document.querySelector('#deck').oncontextmenu = function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		return false
+	};
 }
 
 function touchStart(index){
