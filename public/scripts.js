@@ -100,7 +100,7 @@ function setPositionByIndex(){
 	setSliderPosition();  
 }
 function changing(i){
-	currentIndex = i[1]-1;
+	currentIndex = i.slice(1) - 1;
 	setPositionByIndex();
 }
 
