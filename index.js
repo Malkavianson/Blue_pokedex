@@ -1,6 +1,7 @@
 import express from 'express';
 import poke from './poke.js';
 import path from 'path';
+const PORT = process.env.PORT || 3000;
 const app = express();
 const __dirname = path.resolve(path.dirname(''));
 const pokedex = poke.pokedex;
@@ -27,4 +28,4 @@ app.post('/add', (req,res) => {
 	res.redirect("/");
 });
 
-app.listen(3000, () => console.log("Server in http://localhost:3000"));
+app.listen(PORT, () => console.log("Server in http://localhost:${PORT}"));
