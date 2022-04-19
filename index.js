@@ -28,4 +28,4 @@ app.post('/add', (req,res) => {
 	res.redirect("/");
 });
 
-app.listen(PORT, () => console.log("Server in http://localhost:${PORT}"));
+app.listen(PORT, () => console.log(`Server in http://localhost:${PORT}`));
