@@ -6,57 +6,66 @@
 	font-family: 						'Press Start 2P', cursive;
 }
 *::-webkit-scrollbar {
-  width: 0.1vh;
-  height: 2rem
+  width: 								0.1vh;
+  height: 								2rem
 }
 *::-webkit-scrollbar-track {
-  background: #9e0004;
+  background: 							#9e0004;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #523961;
-  border-radius: 1.5rem;
-  border: 0.3rem solid #83a300;
+  background-color:						#523961;
+  border-radius: 						1.5rem;
+  border:								0.3rem solid #83a300;
 }
 @media(orientation: portrait){
 	html{
-		font-size: 							0.8vh;
+		font-size: 						0.8vh;
 	}
 	main{
-		height:								100%;
-		flex-direction:						column-reverse;
+		height:							100%;
+		flex-direction:					column-reverse;
 	}
 	section#cadastro,section#deck,section#detalhes,section#menu{
-		width:								99%;
+		width:							99%;
 	}
+	nav#navbar{
+		width: 							70vw;
+		height: 						30vh;
+	}
+
 	div#pokedex{
-		width: 								100%;
+		width: 							100%;
 	}
 	.pokemon{
-		width: 								100vw;
+		width: 							100vw;
 	}
 	form label{
-		font-size:							1rem;
+		font-size:						1rem;
 	}
 }
 @media(orientation: landscape){
 	html{
-		font-size: 							0.5vw;
+		font-size: 						0.5vw;
 	}
 	main{
-		height:								87%;
-		flex-direction:						row;
+		height:							87%;
+		flex-direction:					row;
 	}
 	section#cadastro,section#deck,section#detalhes,section#menu{
-		width:								48%;
+		width:							48%;
+	}
+	nav#navbar{
+		width: 							40vw;
+		height: 						60vh;
 	}
 	div#pokedex{
-		width: 								60%;
+		width: 							60%;
 	}
 	.pokemon{
-		width: 								30vw;
+		width: 							30vw;
 	}
 	form label{
-		font-size:							1.5rem;
+		font-size:						1.5rem;
 	}
 
 }
@@ -185,7 +194,6 @@ div#pokedex{
 	width: 								max-content;
 	background:							#9e0004;
 	display:							inline-flex;
-	/* margin:								1%; */
 	align-items: 						stretch;
 	overflow:							hidden;
 	transform:							translateX(0);
@@ -235,9 +243,7 @@ div#listing{
 .lander{
 	width: 								max-content;
 	height:								100%;
-	/* background:							#9e0004; */
 	display:							inline-flex;
-	/* margin:								1%; */
 	align-items: 						center;
 }
 .mini{
@@ -255,16 +261,30 @@ div#listing{
 	transform:							scale(1.15);
 	cursor:								pointer;
 }
-
+section#menu{
+	background-image:					url('bg.gif');
+	background-repeat:					no-repeat;
+	background-position:				center;
+	background-size:					cover;
+	align-items: 						flex-end;
+    justify-content: 					flex-start;
+}
 nav#navbar{
-	width: 								50%;
-	height: 							50%;
-	background: 						white;
+	display: 							flex;
+	position:							absolute;
+	background-image:					url('bg.jpg');
+	background-position:				center;
+	background-repeat:					no-repeat;
+	background-size:					cover;
 	color: 								rgba(0, 0, 0, 0.87);
-	-webkit-clip-path: 					circle(5.5% at 10% 10%);
-	clip-path: 							circle(5.5% at 10% 10%);
+	-webkit-clip-path: 					circle(5% at 10% 90%);
+	clip-path: 							circle(5% at 10% 90%);
 	-webkit-transition: 				-webkit-clip-path 0.5625s, clip-path 0.375s;
 	transition: 						-webkit-clip-path 0.5625s, clip-path 0.375s;
+	align-items: 						flex-start;
+	flex-direction: 					column;
+	justify-content: 					flex-end;
+	overflow:							hidden;
 }
 
 nav#navbar:hover{
@@ -272,36 +292,46 @@ nav#navbar:hover{
 	transition-timing-function: 		ease-out;
 	-webkit-transition-duration: 		0.75s;
 	transition-duration: 				0.75s;
-	-webkit-clip-path: 					circle(80% at 5% 13%);
-	clip-path: 							circle(80% at 5% 13%);
+	-webkit-clip-path: 					circle(50% at 30% 70%);
+	clip-path: 							circle(50% at 30% 70%);
 }
 ul#nav{
-	height:								50%;
-	width:								50%;
+	height: 							50%;
+	width: 								58%;
+	display: 							flex;
+	backdrop-filter: 					drop-shadow(4px 4px 10px blue);
+	-webkit-backdrop-filter: 			drop-shadow(4px 4px 10px blue);
+	flex-direction: 					column;
+	justify-content: 					space-evenly;
+	align-items: 						flex-start;
 }
 li{
-	height: 							30%;
-    width: 								100%;
+	height: 							10%;
+    width: 								500%;
     display: 							flex;
 	font-size:							1.5rem;
-    line-height: 						100%;
-    padding: 							0% 20%;
-    cursor: 							pointer;
+    line-height: 						200%;
+	padding:							2%;
+    margin: 							0% 10%;
     -webkit-user-select: 				none;
     -moz-user-select: 					none;
     -ms-user-select: 					none;
     user-select: 						none;
     align-items: 						center;
+	
 }
 li>a{
-	color:								black;
+	color:								#83a300;
+	text-shadow: 						-0.2rem 0.1rem black;
+	cursor: 							pointer;
 }
 li:hover{ 
-	background: 						#ffe082;
+	background: 						#538300;
+	border-radius:						2rem;
 }
 
 li:active{
-	background: 						#ffca28;
+	background: 						#538300;
 }
 
 .pokeball{
@@ -312,6 +342,7 @@ li:active{
 	-webkit-transform-origin: 			3.2% 2.4%;
 	-ms-transform-origin: 				3.2% 2.4%;
 	transform-origin: 					3.2% 2.4%;
+	cursor: 							grab;
 }
 
 
