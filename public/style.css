@@ -213,25 +213,25 @@ div#pokedex{
 	display: 							flex;
 	background:							#e1e3db;
 	flex-direction: 					column;
-	justify-content: 					space-evenly;
+	justify-content: 					space-between;
 	gap:								1%;
 	align-items: 						center;
 	user-select: 						none;
 	transition:							transform 0.5s cubic-bezier(0.5, -0.74, 1, 1.74);
 }
 .pokemon>div{
-	width:								100%;
-	height:								8%;
+	width: 								90%;
+	height: 							10%;
 	display: 							flex;
 	flex-direction: 					row;
 	justify-content: 					space-around;
 	align-items: 						flex-end;
 }
 .pokemon p{
-	height:								10%;
+	height: 							100%;
 	width:								80%;
 	display:							flex;
-	align-items:						center;
+	align-items: 						flex-end;
 }
 .pokemon img{
 	max-width: 							90%;
@@ -345,7 +345,7 @@ li:active{
 .pokeball{
 	height: 							10%;
 	width: 								10%;
-	padding: 							8% 7%;
+	padding: 							0.5% 8.2%;
 	cursor: 							pointer;
 	-webkit-transform-origin: 			3.2% 2.4%;
 	-ms-transform-origin: 				3.2% 2.4%;
@@ -353,6 +353,25 @@ li:active{
 	cursor: 							grab;
 }
 
+.pokeball div {
+  position: relative;
+  width: 35%;
+  height: 5%;
+  background: rgba(0, 0, 0, 0.87);
+}
+
+.pokeball div:before,.pokeball div:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.87);
+  position: absolute;
+}
+
+.pokeball div:before { top: 350%; }
+
+.pokeball div:after { top: -350%; }
 
 footer{
 	position:							relative;
