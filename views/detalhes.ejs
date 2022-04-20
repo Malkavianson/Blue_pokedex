@@ -7,16 +7,12 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 		<!-- <link rel='icon' href='./src/img/icon.png'> -->
 		
-		<link rel='stylesheet' href='css/style.css'>
+		<link rel='stylesheet' href='/css/style.css'>
 
 	</head>
 	
 	<body>
-		<header>
-			<div>
-				<h1>Smart Pokedex</h1>
-			</div>
-		</header>
+		<%- include('./partials/header.ejs') %>
 		<main>
 			<section id='details'>
 				<div id='listing'>
@@ -65,22 +61,9 @@
 					</div>
 				</div>
 			</section>
-			<section id='menu'>
-				<nav id="navbar">
-					<ul id="nav">
-						<li><a href="/">Pokedex</a></li>
-						<li><a href="/register">Register a new Pokemon</a></li>
-						<li><a href="/details/1">Details</a></li>
-					</ul>
-					<div class="pokeball">
-						<div></div>
-					</div>
-				</nav>
-			</section>
+			<%- include('./partials/nav.ejs') %>
 		</main>
-		<footer>
-			<a href='https://github.com/Malkavianson'>Created by @Malkavianson</p>
-		</footer>
-		<script src="scripts.js"></script>
+		<%- include('./partials/footer.ejs') %>
+		<script src="/js/scripts.js"></script>
 	</body>
 </html>
