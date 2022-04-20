@@ -11,9 +11,9 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-//rotas
-app.get('/', (req,res) => {
-	let pokedex = p.sort((a, b) => {
+
+function pkl(p){
+	let arr = p.sort((a, b) => {
 		if (a.type.toLowerCase() > b.type.toLowerCase()) {
 			return 1;
 		} else if (a.type.toLowerCase() < b.type.toLowerCase()) {
@@ -21,16 +21,28 @@ app.get('/', (req,res) => {
 		};
 		return 0;
 	});
+	return arr;
+}
+
+
+
+//rotas
+app.get('/', (req,res) => {
+	let pokedex = pkl(p);
 	res.render ('index', {pokedex});
 });
 app.get('/register', (req,res) => {
 	res.render ('cadastro');
 });
-app.get('/details', (req,res) => {
-	res.render ('detalhes');
+app.get('/details/:id', (req,res) => {
+	let pokedex = pkl(p);
+	let id = +req.params.id;
+	const pokemon = p.find(p => p.id === id)
+	
+	res.render ('detalhes', {pokedex, pokemon});
 });
 
-app.post('/add', (req,res) => {
+app.post('/include', (req,res) => {
 	const pokemon = req.body;
 	let n = true;
 	for(let pk of p){

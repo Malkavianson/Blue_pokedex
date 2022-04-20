@@ -27,12 +27,12 @@
 							<div class='pokemon'>
 								<div>
 									<h1><%= pokemon.name%></h1>
-									<h3><%= pokemon.type%></h2>
+									<h3><%= pokemon.type%></h3>
 								</div>
 								<img src="<%= pokemon.picture %>" alt="<%= pokemon.name%> picture">
 								<div>
 									<p><%= pokemon.description%></p>
-									<a href=''>Editar</a>
+									<a href='/details/<%= pokemon.id %>'>Editar</a>
 								</div>
 							</div>
 						<% }) %>
@@ -53,7 +53,7 @@
 					<ul id="nav">
 						<li><a href="/">Pokedex</a></li>
 						<li><a href="/register">Register a new Pokemon</a></li>
-						<li><a href="/details">Details</a></li>
+						<li><a href="/details/1">Details</a></li>
 					</ul>
 					<div class="pokeball">
 						<div></div>

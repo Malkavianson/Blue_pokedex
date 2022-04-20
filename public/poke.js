@@ -54,7 +54,7 @@ export default {
 		description: 'When Vaporeon’s fins begin to vibrate, it is a sign that rain will come within a few hours.',
 		height: 1,
 		weight: 29,
-		category: 'Buble Jet',
+		category: 'Bubble jet',
 		abilities: ['Water Absorb'],
 		weaknesses: ['Grass','Eletric'],
 		picture: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png',

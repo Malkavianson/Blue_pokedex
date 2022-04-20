@@ -26,7 +26,7 @@
 		height:							100%;
 		flex-direction:					column-reverse;
 	}
-	section#cadastro,section#deck,section#detalhes,section#menu{
+	section#cadastro,section#deck,section#details,section#menu{
 		width:							99%;
 	}
 	nav#navbar{
@@ -52,7 +52,7 @@
 		height:							87%;
 		flex-direction:					row;
 	}
-	section#cadastro,section#deck,section#detalhes,section#menu{
+	section#cadastro,section#deck,section#details,section#menu{
 		width:							48%;
 	}
 	nav#navbar{
@@ -108,16 +108,12 @@ header>div>h1{
 	max-width:							100%;
 	font-size:							4rem;
 }
-
-
-
-
 main{
 	display:							flex;
 	align-items:						center;
 	background:							#b9030f;
 }
-section#cadastro,section#deck,section#detalhes,section#menu{
+section#cadastro,section#deck,section#details,section#menu{
 	height:								100%;
 	display: 							flex;
 	justify-content: 					center;
@@ -233,15 +229,100 @@ div#pokedex{
 	display:							flex;
 	align-items: 						flex-end;
 }
+.pokemon a{
+	height:								50%;
+	width:								15%;
+	color:								#83a300;
+}
 .pokemon img{
 	max-width: 							90%;
 	max-height:							75%;
 }
-.grabbing{
-	cursor:								grabbing;
-}
 .grabbing .pokemon{
 	transform:							scale(0.85);
+}
+
+section#details{
+	flex-direction: 					column;
+}
+div#pokedet{
+	width:								90%;
+	height:								80%;
+	overflow:							hidden;
+	background:							#9e0004;
+}
+.dets{
+	height:								100%;
+	width: 								100%;
+	background:							#9e0004;
+	display:							inline-flex;
+	align-items: 						stretch;
+	overflow:							hidden;
+	transform:							translateX(0);
+	transition:							transform 0.2s ease-out;
+}
+.detail{
+	max-height: 						100%;
+	display: 							flex;
+	background:							#e1e3db;
+	flex-direction: 					column;
+	justify-content: 					space-between;
+	gap:								1%;
+	padding:							3% 0%;
+	align-items: 						center;
+	user-select: 						none;
+	transition:							transform 0.5s cubic-bezier(0.5, -0.74, 1, 1.74);
+	align-items:						center;
+	align-content:						center;
+}
+.detail>div{
+	width: 								90%;
+	height: 							40%;
+	display: 							flex;
+	flex-direction: 					row;
+	justify-content: 					center;
+	align-items: 						center;
+}
+.detail p{
+	height: 							15%;
+	width:								95%;
+	display:							flex;
+	align-items: 						center;
+}
+.detail a{
+	height:								50%;
+	width:								15%;
+	color:								#83a300;
+}
+.detail img{
+	max-width: 							50%;
+	max-height:							100%;
+}
+.detail>div>div{
+	height: 							100%;
+    width: 								inherit;
+    display: 							flex;
+    flex-direction: 					column;
+    justify-content: 					space-evenly;
+}
+.detail>div:nth-child(2)>div{
+	flex-direction:						row;
+	align-items:						center;
+}
+.grabbing .detail{
+	transform:							scale(0.85);
+}
+.detail h1,.detail h2,.detail h3{
+	width: 								100%;
+    height: 							20%;
+	font-size:							1.15rem;
+	text-align-last:					start;
+    text-transform: 					uppercase;
+}
+
+
+.grabbing{
+	cursor:								grabbing;
 }
 div#listing{
 	height:								10%;
@@ -354,19 +435,19 @@ li:active{
 }
 
 .pokeball div {
-  position: relative;
-  width: 35%;
-  height: 5%;
-  background: rgba(0, 0, 0, 0.87);
+	position: 							relative;
+	width: 								35%;
+	height: 							5%;
+	background: 						rgba(0, 0, 0, 0.87);
 }
 
 .pokeball div:before,.pokeball div:after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.87);
-  position: absolute;
+	display: 							block;
+	content: 							"";
+	width: 								100%;
+	height: 							100%;
+	background: 						rgba(0, 0, 0, 0.87);
+	position: 							absolute;
 }
 
 .pokeball div:before { top: 350%; }
