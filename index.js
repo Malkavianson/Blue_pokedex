@@ -6,14 +6,6 @@ const app = express();
 const __dirname = path.resolve(path.dirname(''));
 const p = poke.pokedex;
 
-// const pokedex = p.sort((a, b) => {
-	// if (a.type > b.type) {
-		// return 1;
-	// } else if (a.type < b.type) {
-	// return -1;
-	// }
-  // return 0;
-// });
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
