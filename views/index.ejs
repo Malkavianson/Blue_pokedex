@@ -38,7 +38,7 @@
 				<div id='listing'>
 					<div class='lander'>
 						<% pokedex.forEach((pokemon) =>{ %>
-						<div id="i<%= pokemon.id %>" class='mini' onclick='changing(id)'>
+						<div id="i<%= pokedex.indexOf(pokemon) + 1 %>" class='mini' onclick='changing(id)'>
 							<img src="<%= pokemon.picture %>" alt="<%= pokemon.name%> picture">
 						</div>
 						<% }) %>
