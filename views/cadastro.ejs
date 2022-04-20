@@ -12,11 +12,7 @@
 	</head>
 	
 	<body>
-		<header>
-			<div>
-				<h1>Smart Pokedex</h1>
-			</div>
-		</header>
+		<%- include('./partials/header.ejs') %>
 		<main>
 			<section id='cadastro'>
 				<h2>Register a new pokemon!</h2>
@@ -64,22 +60,9 @@
 					</div>
 				</form>
 			</section>
-			<section id='menu'>
-				<nav id="navbar">
-					<ul id="nav">
-						<li><a href="/">Pokedex</a></li>
-						<li><a href="/register">Register a new Pokemon</a></li>
-						<li><a href="/details/1">Details</a></li>
-					</ul>
-					<div class="pokeball">
-						<div></div>
-					</div>
-				</nav>
-			</section>
+			<%- include('./partials/nav.ejs') %>
 		</main>
-		<footer>
-			<a href='https://github.com/Malkavianson'>Created by @Malkavianson</p>
-		</footer>
+		<%- include('./partials/footer.ejs') %>
 		<script src="scripts.js"></script>
 	</body>
 </html>
