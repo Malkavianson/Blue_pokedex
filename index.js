@@ -1,5 +1,5 @@
 import express from 'express';
-import poke from './public/poke.js';
+import poke from './public/js/poke.js';
 import path from 'path';
 const PORT = process.env.PORT || 3000;
 const app = express();
