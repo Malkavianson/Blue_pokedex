@@ -17,6 +17,7 @@
   border-radius: 						1.5rem;
   border:								0.3rem solid #83a300;
 }
+
 @media(orientation: portrait){
 	html{
 		font-size: 						0.8vh;
