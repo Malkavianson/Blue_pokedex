@@ -24,7 +24,7 @@ function pkl(p){
 	return arr;
 }
 
-function Pokemon(n, t, d, h, w, c, a, wk, p) {
+function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 	
 		Object.defineProperties(this, {
 		name: {
@@ -47,13 +47,13 @@ function Pokemon(n, t, d, h, w, c, a, wk, p) {
 		},
 		height: {
 			enumerable: true,
-			value: h,
+			value: num(h),
 			writable: true,
 			configurable: true,
 		},
 		weight: {
 			enumerable: true,
-			value: w,
+			value: num(w),
 			writable: true,
 			configurable: true,
 		},
@@ -81,7 +81,16 @@ function Pokemon(n, t, d, h, w, c, a, wk, p) {
 			writable: true,
 			configurable: true,
 		},
+		id: {
+			enumerable: true,
+			value: pk.length + 1,
+			writable: true,
+			configurable: true,
+		},
 	});
+	
+	function num(n){ let num = parseFloat(n).toFixed(1); return num;}
+	
 }
 
 //rotas
@@ -101,23 +110,7 @@ app.get('/details/:id', (req,res) => {
 
 app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
-	console.log(name)
-	console.log(type)
-	console.log(description)
-	console.log(height)
-	console.log(weight)
-	console.log(category)
-	console.log(abilities)
-	console.log(weaknesses)
-	console.log()
-	console.log()
-
-	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture);
-	// const pokemon = req.body;
-
-	console.log(pokedex)
-	console.log()
-	console.log()
+	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
 	console.log(pokemon)
 	console.log()
 	console.log()
@@ -127,21 +120,13 @@ app.post('/include', (req,res) => {
 		if(pk.name === pokemon.name){
 			console.log(`${pk.name} is already included`)
 			n = false;
+			break;
 		}
 	}
 	if(n){
-		// const pokemon
-		pokemon.id = pokedex.length + 1
 		console.log(`${pokemon.name} added successfully`)
 		pokedex.push(pokemon);
 	}
-
-	// console.log(pokedex)
-	// console.log()
-	// console.log()
-	// console.log(pokemon)
-	// console.log()
-	// console.log()
 
 	res.redirect("/");
 });
