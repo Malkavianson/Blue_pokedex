@@ -4,7 +4,7 @@ import path from 'path';
 const PORT = process.env.PORT || 3000;
 const app = express();
 const __dirname = path.resolve(path.dirname(''));
-const p = poke.pokedex;
+const pokedex = poke.pokedex;
 
 
 app.set("view engine", "ejs");
@@ -28,33 +28,33 @@ function pkl(p){
 
 //rotas
 app.get('/', (req,res) => {
-	let pokedex = pkl(p);
-	res.render ('index', {pokedex});
+	let p = pkl(pokedex);
+	res.render ('index', {p});
 });
 app.get('/register', (req,res) => {
 	res.render ('cadastro');
 });
 app.get('/details/:id', (req,res) => {
-	let pokedex = pkl(p);
+	let p = pkl(pokedex);
 	let id = +req.params.id;
-	const pokemon = p.find(p => p.id === id)
+	const pokemon = pokedex.find(pokedex => pokedex.id === id)
 	
-	res.render ('detalhes', {pokedex, pokemon});
+	res.render ('detalhes', {p, pokemon});
 });
 
 app.post('/include', (req,res) => {
 	const pokemon = req.body;
 	let n = true;
-	for(let pk of p){
+	for(let pk of pokedex){
 		if(pk.name === pokemon.name){
 			console.log(`${pk.name} is already included`)
 			n = false;
 		}
 	}
 	if(n){
-		pokemon.id = p.length + 1
+		pokemon.id = pokedex.length + 1
 		console.log(`${pokemon.name} added successfully`)
-		p.push(pokemon);
+		pokedex.push(pokemon);
 	}
 	res.redirect("/");
 });

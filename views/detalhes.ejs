@@ -17,9 +17,9 @@
 			<section id='details'>
 				<div id='listing'>
 					<div class='lander'>
-						<% pokedex.forEach((poke) =>{ %>
+						<% p.forEach((poke) =>{ %>
 						<a href='/details/<%= poke.id %>'>
-							<div id="i<%= pokedex.indexOf(poke) + 1 %>" class='mini' onclick='changing(id)'>
+							<div id="i<%= p.indexOf(poke) + 1 %>" class='mini' onclick='changing(id)'>
 								<img src="<%= poke.picture%>" alt="<%= poke.name%> picture">
 							</div>
 						</a>
