@@ -229,10 +229,14 @@ div#pokedex{
 	display:							flex;
 	align-items: 						flex-end;
 }
-.pokemon a{
-	height:								50%;
-	width:								15%;
-	color:								#83a300;
+.pokemon button{
+	height: 							100%;
+    width: 								15%;
+	background:							#e1e3db;
+    font-size: 							1rem;
+    color: 								#83a300;
+    border: 							none;
+	cursor:								pointer;
 }
 .pokemon img{
 	max-width: 							90%;
@@ -263,6 +267,7 @@ div#pokedet{
 }
 .detail{
 	max-height: 						100%;
+	width: 								inherit;
 	display: 							flex;
 	background:							#e1e3db;
 	flex-direction: 					column;

@@ -28,7 +28,7 @@
 								<img src="<%= pokemon.picture %>" alt="<%= pokemon.name%> picture">
 								<div>
 									<p><%= pokemon.description%></p>
-									<a href='/details/<%= pokemon.id %>'>Details</a>
+									<button onclick="window.location.href='/details/<%= pokemon.id %>'">Details</button>
 								</div>
 							</div>
 						<% }) %>
