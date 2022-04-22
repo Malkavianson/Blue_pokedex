@@ -1,0 +1,93 @@
+	<head>
+	
+		<title>Blue - Pokedex</title>
+		
+		<meta charset='uft-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<link rel='icon' href='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/15px-Pok%C3%A9_Ball_icon.svg.png'>
+		
+		<link rel='stylesheet' href='/css/style.css'>
+
+	</head>
+	
+	<body>
+		<%- include('./partials/header.ejs') %>
+		<main>
+			<section id='details'>
+				<div id='listing'>
+					<div class='lander'>
+						<% p.forEach((poke) =>{ %>
+						<a href='/details/<%= poke.id %>'>
+							<div id="i<%= p.indexOf(poke) + 1 %>" class='mini' onclick='changing(id)'>
+								<img src="<%= poke.picture%>" alt="<%= poke.name%> picture">
+							</div>
+						</a>
+						<% }) %>
+					</div>
+				</div>
+				<div id='pokedet'>
+					<div class='dets'>
+						<div class='changings'>
+							<div>
+								<img src="<%= pokemon.picture%>" alt="<%= pokemon.name%>'s picture">
+								<div>
+									<form action='/changed' method='POST'>
+										<div>
+											<div>
+												<label for='id'>ID:</label>
+												<input type='text' id='id' name='id' value='<%= pokemon.id%>' readonly>
+											</div>
+											<div>
+												<label for='name'>Name:</label>
+												<input type='text' id='name' name='name' value='<%= pokemon.name%>'>
+											</div>
+											<div>
+												<label for='type'>Type:</label>
+												<input type='text' id='type' name='type' value='<%= pokemon.type%>'>
+											</div>
+											<div>
+												<label for='description'>Description:</label>
+												<input type='text' id='description' name='description' value='<%= pokemon.description%>'>
+											</div>
+											<div>
+												<label for='height'>Height:</label>
+												<input type='text' id='height' name='height' value='<%= pokemon.height%>'>
+											</div>
+											<div>
+												<label for='weight'>Weight:</label>
+												<input type='text' id='weight' name='weight' value='<%= pokemon.weight%>'>
+											</div>
+											<div>
+												<label for='category'>Category:</label>
+												<input type='text' id='category' name='category' value='<%= pokemon.category%>'>
+											</div>
+											<div>
+												<label for='abilities'>Abilities:</label>
+												<input type='text' id='abilities' name='abilities' value='<%= pokemon.abilities %>'>
+											</div>
+											<div>
+												<label for='weaknesses'>Weaknesses:</label>
+												<input type='text' id='weaknesses' name='weaknesses' value='<%= pokemon.weaknesses %>'>
+											</div>
+										</div>
+										<div>
+											<label for='picture'>Link for pokemon's image:</label>
+											<input type='url' id='picture' name='picture' value='<%= pokemon.picture%>'>
+										</div>
+										<div>
+											<button id='recordBtn' type='submit'>Record</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<%- include('./partials/nav.ejs') %>
+		</main>
+		<%- include('./partials/footer.ejs') %>
+		<script src="/js/scripts.js"></script>
+	</body>
+</html>

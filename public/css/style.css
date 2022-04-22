@@ -265,13 +265,10 @@ div#pokedet{
 	transform:							translateX(0);
 	transition:							transform 0.2s ease-out;
 }
-.detail{
-	max-height: 						100%;
-	width: 								inherit;
+.detail,.changings{
 	display: 							flex;
 	background:							#e1e3db;
 	flex-direction: 					column;
-	justify-content: 					space-between;
 	gap:								1%;
 	padding:							3% 0%;
 	align-items: 						center;
@@ -280,7 +277,17 @@ div#pokedet{
 	align-items:						center;
 	align-content:						center;
 }
-.detail>div{
+.details{
+	justify-content: 					space-between;
+	max-height: 						100%;
+	width: 								inherit;
+}
+.changings{
+	justify-content: 					center;
+	max-height: 						100%;
+	width: 								95%;
+}
+.detail>div,.changings>div{
 	width: 								90%;
 	height: 							40%;
 	display: 							flex;
@@ -288,13 +295,13 @@ div#pokedet{
 	justify-content: 					center;
 	align-items: 						center;
 }
-.detail p{
+.detail p,.changings p{
 	height: 							15%;
 	width:								95%;
 	display:							flex;
 	align-items: 						center;
 }
-.detail a{
+.detail a, .changings a{
 	height:								50%;
 	width:								15%;
 	color:								#83a300;
@@ -303,29 +310,42 @@ div#pokedet{
 	max-width: 							50%;
 	max-height:							100%;
 }
-.detail>div>div{
+.changings img{
+	max-width: 							25%;
+	max-height:							100%;
+}
+.detail>div>div, .changings>div>div{
 	height: 							100%;
     width: 								inherit;
     display: 							flex;
     flex-direction: 					column;
     justify-content: 					space-evenly;
 }
-.detail>div:nth-child(2)>div{
+.detail>div:nth-child(2)>div,.changings>div:nth-child(2)>div{
 	flex-direction:						row;
 	align-items:						center;
 }
-.grabbing .detail{
+.grabbing .detail,.grabbing .changings{
 	transform:							scale(0.85);
 }
-.detail h1,.detail h2,.detail h3{
+.detail h1,.detail h2,.detail h3,.changings h1,.changings h2,.changings h3{
 	width: 								100%;
     height: 							20%;
 	font-size:							1.15rem;
 	text-align-last:					start;
     text-transform: 					uppercase;
 }
+.detail button{
+	font-size:	1.5rem;
+}
 
-
+.changings input{
+	border:	solid 0.5rem black;
+	font-size:	1rem;
+}
+.changings button{
+	font-size:	0.8rem;
+}
 .grabbing{
 	cursor:								grabbing;
 }

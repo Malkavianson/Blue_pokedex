@@ -65,13 +65,13 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 		},
 		abilities: {
 			enumerable: true,
-			value: a.split('-'),
+			value: a.split(','),
 			writable: true,
 			configurable: true,
 		},
 		weaknesses: {
 			enumerable: true,
-			value: wk.split('-'),
+			value: wk.split(','),
 			writable: true,
 			configurable: true,
 		},
@@ -90,8 +90,11 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 	});
 	
 	function num(n){ let num = parseFloat(n).toFixed(1); return num;}
-	
 }
+
+// pokemon.change(1,'name','jacinto');
+
+
 
 //rotas
 app.get('/', (req,res) => {
@@ -108,27 +111,47 @@ app.get('/details/:id', (req,res) => {
 	res.render ('detalhes', {p, pokemon});
 });
 
+app.get('/changing/:id', (req,res) => {
+	let p = pkl(pokedex);
+	let id = +req.params.id;
+	const pokemon = pokedex.find(pokedex => pokedex.id === id)
+	res.render ('changing', {p, pokemon});
+});
+
+app.post('/changed', (req,res) =>{
+	const pokemon = req.body;
+	for(let pkm of pokedex){
+		if(pkm.id == pokemon.id){
+			let i = pokedex.indexOf(pkm);
+			for(let [k, v] of Object.entries(pokemon)){
+				if(v === ""){
+					pokemon[k] = pkm[k].toString();
+				};
+			};
+			const newPoke = new Pokemon(pokemon.name, pokemon.type, pokemon.description, pokemon.height, pokemon.weight, pokemon.category, pokemon.abilities, pokemon.weaknesses, pokemon.picture, pokedex);
+			newPoke.id = pkm.id;
+			pokedex[i] = newPoke;
+		};
+	};
+	res.redirect(`/details/${pokemon.id}`);
+});
+
 app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
 	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
-	console.log(pokemon)
-	console.log()
-	console.log()
-
 	let n = true;
 	for(let pk of pokedex){
 		if(pk.name === pokemon.name){
-			console.log(`${pk.name} is already included`)
+			console.log(`${pk.name} is already included`);
 			n = false;
 			break;
 		}
 	}
 	if(n){
-		console.log(`${pokemon.name} added successfully`)
+		console.log(`${pokemon.name} added successfully`);
 		pokedex.push(pokemon);
 	}
-
 	res.redirect("/");
 });
 
-app.listen(PORT, () => console.log(`Server in http://localhost:${PORT}`));
+app.listen(PORT, () => {console.clear(); console.log(`Server in http://localhost:${PORT}`)});
