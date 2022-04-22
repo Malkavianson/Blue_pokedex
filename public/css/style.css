@@ -336,15 +336,15 @@ div#pokedet{
     text-transform: 					uppercase;
 }
 .detail button{
-	font-size:	1.5rem;
+	font-size:							1.5rem;
 }
 
 .changings input{
-	border:	solid 0.5rem black;
-	font-size:	1rem;
+	border:								solid 0.5rem black;
+	font-size:							1rem;
 }
 .changings button{
-	font-size:	0.8rem;
+	font-size:							0.8rem;
 }
 .grabbing{
 	cursor:								grabbing;
@@ -501,49 +501,49 @@ li:active{
 .pokeball div:after { left: 150%; }
 
 div#sensor{
-	height: 12%;
-	aspect-ratio: 1;
-    margin: 2% 3%;
+	height: 							12%;
+	aspect-ratio: 						1;
+    margin: 							2% 3%;
 
 }
 div#dot{
-	height: 5%;
-    width: 20%;
-    display: flex;
-    margin: 2% 3%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
+	height: 							5%;
+    width: 								20%;
+    display: 							flex;
+    margin: 							2% 3%;
+    align-items: 						center;
+    justify-content: 					center;
+    flex-wrap: 							nowrap;
+    flex-direction: 					row;
 }
 
 @keyframes clr {
 	50% {
-		background: grey;
+		background: 					grey;
 	}
 }
 div#dot>div{
-	height: 100%;
-	aspect-ratio: 1;
-    background: yellow;
-	border-width: 0.4vw;
-	border-style: ridge groove groove ridge;
-	border-color: white;
-    border-radius: 10vh;
-	animation: clr 3s infinite;
-	animation-delay: -0.75s;
+	height: 							100%;
+	aspect-ratio: 						1;
+    background: 						yellow;
+	border-width: 						0.4vw;
+	border-style: 						ridge groove groove ridge;
+	border-color: 						white;
+    border-radius: 						10vh;
+	animation: 							clr 3s infinite;
+	animation-delay: 					-0.75s;
 }
 
 div#dot:before,div#dot:after{
-	content: " ";
-	height: 100%;
-	aspect-ratio: 1;
-	border-width: 0.4vw;
-	border-style: ridge groove groove ridge;
-	border-color: white;
-    border-radius: 10vh;
-    margin: 2% 3%;
-	animation: clr 3s infinite;
+	content: 							" ";
+	height: 							100%;
+	aspect-ratio: 						1;
+	border-width: 						0.4vw;
+	border-style: 						ridge groove groove ridge;
+	border-color: 						white;
+    border-radius: 						10vh;
+    margin: 							2% 3%;
+	animation: 							clr 3s infinite;
 }
 
 div#dot:before { left: 350%; animation-delay: -1.5s;background: red; }
