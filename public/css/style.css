@@ -396,7 +396,7 @@ nav#navbar:hover{
 }
 
 nav#navbar:hover .pokeball{
-	animation: opc 0.5s linear reverse forwards;
+	animation: 							opc 0.5s linear reverse forwards;
 }
 
 ul#nav{
@@ -440,16 +440,16 @@ li:active{
 
 .pokeball{
 	height: 							15%;
-	aspect-ratio: 1;
+	aspect-ratio: 						1;
 	background: 						rgba(0, 0, 0, 0.87);
-    background: cyan;
-	border-width: 0.4vw;
-	border-style: ridge groove groove ridge;
-	border-color: white;
-    border-radius: 10vh;
+    background: 						cyan;
+	border-width: 						0.4vw;
+	border-style: 						ridge groove groove ridge;
+	border-color: 						white;
+    border-radius: 						10vh;
 	display:							flex;
 	align-items:						center;
-	justify-content:					center;
+	justify-content:					flex-start;
 	padding: 							4.5% 4%;
 	cursor: 							pointer;
 	-webkit-transform-origin: 			3.2% 2.4%;
@@ -460,20 +460,25 @@ li:active{
 
 .pokeball div {
 	position: 							relative;
-	height: 100%;
+	width: 								15%;
+	aspect-ratio:						1;
+	border-radius:						1vh;
+	background: 						rgba(0, 0, 0, 0.87);
 }
 
-/* .pokeball div:before,.pokeball div:after { */
-	/* display: 							block; */
-	/* content: 							""; */
-	/* width: 								100%; */
-	/* height: 							100%; */
-	/* background: 						rgba(0, 0, 0, 0.87); */
-	/* position: 							absolute; */
-/* } */
-/* .pokeball div:before { top: 350%; } */
+.pokeball div:before,.pokeball div:after {
+	display: 							block;
+	content: 							"";
+	width: 								100%;
+	aspect-ratio:						1;
+	border-radius:						1vh;
+	background: 						rgba(0, 0, 0, 0.87);
+	position: 							absolute;
+}
 
-/* .pokeball div:after { top: -350%; } */
+.pokeball div:before { left: 300%; }
+
+.pokeball div:after { left: 150%; }
 
 div#sensor{
 	height: 12%;
