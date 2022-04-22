@@ -448,7 +448,7 @@ li:active{
 	border-color: 						white;
     border-radius: 						10vh;
 	display:							flex;
-	align-items:						center;
+	align-items:						flex-end;
 	justify-content:					flex-start;
 	padding: 							4.5% 4%;
 	cursor: 							pointer;
