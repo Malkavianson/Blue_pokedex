@@ -6,7 +6,6 @@ const app = express();
 const __dirname = path.resolve(path.dirname(''));
 const pokedex = poke.pokedex;
 
-
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
@@ -25,8 +24,7 @@ function pkl(p){
 }
 
 function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
-	
-		Object.defineProperties(this, {
+	Object.defineProperties(this, {
 		name: {
 			enumerable: true,
 			value: n,
@@ -88,13 +86,8 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 			configurable: true,
 		},
 	});
-	
 	function num(n){ let num = parseFloat(n).toFixed(1); return num;}
 }
-
-// pokemon.change(1,'name','jacinto');
-
-
 
 //rotas
 app.get('/', (req,res) => {
@@ -110,7 +103,6 @@ app.get('/details/:id', (req,res) => {
 	const pokemon = pokedex.find(pokedex => pokedex.id === id)
 	res.render ('detalhes', {p, pokemon});
 });
-
 app.get('/changing/:id', (req,res) => {
 	let p = pkl(pokedex);
 	let id = +req.params.id;
@@ -135,7 +127,6 @@ app.post('/changed', (req,res) =>{
 	};
 	res.redirect(`/details/${pokemon.id}`);
 });
-
 app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
 	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
