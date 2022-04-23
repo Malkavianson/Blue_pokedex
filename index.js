@@ -110,15 +110,15 @@ app.get('/changing/:id', (req,res) => {
 	res.render ('changing', {p, pokemon});
 });
 
-app.get('/deleting/:id', (req,res) => {
-	const id = +req.params.id;
-	const pokemon = pokedex.find(pokedex => pokedex.id === id);
-	const i = pokedex.indexOf(pokemon);
-	pokedex.splice(i, 1);
-	console.log(`${pokemon.name} was deleted`);
+// app.get('/deleting/:id', (req,res) => {
+	// const id = +req.params.id;
+	// const pokemon = pokedex.find(pokedex => pokedex.id === id);
+	// const i = pokedex.indexOf(pokemon);
+	// pokedex.splice(i, 1);
+	// console.log(`${pokemon.name} was deleted`);
 
-	res.redirect(`/`);
-});
+	// res.redirect(`/`);
+// });
 
 app.post('/changed', (req,res) =>{
 	const pokemon = req.body;
