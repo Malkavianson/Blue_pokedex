@@ -505,15 +505,15 @@ li:active{
 
 @keyframes mv {
 	from {
-		transform: translate(0%, 0%) scale(1) rotate(360deg);
+		transform: translate(-150%, 150%) scale(1) rotate(360deg);
 	}
 	to {
-		transform: translate(500%, -500%) scale(5) rotate(0deg);
+		transform: translate(50%, -100%) scale(2) rotate(0deg);
 	}
 }
 
 .pokeball>img{
-	animation:							mv 3s infinite cubic-bezier(1, 2.5, 0, 0.5) alternate;
+	animation:							mv 3s infinite cubic-bezier(1, 2.5, 0, 2.5) alternate;
 }
 
 div#sensor{
@@ -534,7 +534,7 @@ div#dot{
 }
 
 @keyframes clr {
-	50% { background:						gray; }
+	50% { background:					gray; }
 }
 
 div#dot>div{
