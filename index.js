@@ -111,8 +111,10 @@ app.get('/changing/:id', (req,res) => {
 });
 
 app.get('/deleting/:id', (req,res) => {
-	const id = +req.params.id - 1;
-	pokedex.splice(id, 1);
+	const id = +req.params.id;
+	const pokemon = pokedex.find(pokedex => pokedex.id === id);
+	const i = pokedex.indexOf(pokemon);
+	pokedex.splice(i, 1);
 	res.redirect(`/`);
 });
 
