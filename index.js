@@ -115,6 +115,8 @@ app.get('/deleting/:id', (req,res) => {
 	const pokemon = pokedex.find(pokedex => pokedex.id === id);
 	const i = pokedex.indexOf(pokemon);
 	pokedex.splice(i, 1);
+	console.log(`${pokemon.name} was deleted`);
+
 	res.redirect(`/`);
 });
 
@@ -131,6 +133,8 @@ app.post('/changed', (req,res) =>{
 			const newPoke = new Pokemon(pokemon.name, pokemon.type, pokemon.description, pokemon.height, pokemon.weight, pokemon.category, pokemon.abilities, pokemon.weaknesses, pokemon.picture, pokedex);
 			newPoke.id = pkm.id;
 			pokedex[i] = newPoke;
+			console.log(`${newPoke.name} was changed`);
+
 		};
 	};
 	res.redirect(`/details/${pokemon.id}`);
