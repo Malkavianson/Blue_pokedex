@@ -291,7 +291,7 @@ div#pokedet{
 }
 .detail>div,.changings>div{
 	width: 								90%;
-	height: 							40%;
+	height: 							35%;
 	display: 							flex;
 	flex-direction: 					row;
 	justify-content: 					center;
