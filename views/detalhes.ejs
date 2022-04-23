@@ -56,7 +56,10 @@
 								</div>
 							</div>
 							<p><%= pokemon.description%></p>
-							<button onclick="window.location.href='/changing/<%= pokemon.id %>'">Change</button>
+							<div id='btn'>
+								<button onclick="window.location.href='/deleting/<%= pokemon.id %>'">Delete</button>
+								<button onclick="window.location.href='/changing/<%= pokemon.id %>'">Change</button>
+							</div>
 						</div>
 					</div>
 				</div>

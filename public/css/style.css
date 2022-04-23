@@ -339,6 +339,8 @@ div#pokedet{
 }
 .detail button{
 	font-size:							1.5rem;
+	border:								none;
+	cursor:								pointer;
 }
 
 .changings input{
@@ -558,6 +560,11 @@ div#dot:before,div#dot:after{
 div#dot:before { left: 350%; animation-delay: -1.5s;background: red; }
 
 div#dot:after { left: -350%; background: lime; }
+
+div#btn{
+	height:								5%;
+	gap:								10%;
+}
 
 footer{
 	position:							relative;

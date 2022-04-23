@@ -89,11 +89,6 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 	function num(n){ let num = parseFloat(n).toFixed(1); return num;}
 }
 
-function popup(){
-	const s = document.querySelectorAll('section')[0];
-	s.innerHTML = `<%- include('./partials/nav.ejs') %>`;
-}
-
 //rotas
 app.get('/', (req,res) => {
 	let p = pkl(pokedex);
@@ -113,6 +108,12 @@ app.get('/changing/:id', (req,res) => {
 	let id = +req.params.id;
 	const pokemon = pokedex.find(pokedex => pokedex.id === id)
 	res.render ('changing', {p, pokemon});
+});
+
+app.get('/deleting/:id', (req,res) => {
+	const id = +req.params.id - 1;
+	pokedex.splice(id, 1);
+	res.redirect(`/`);
 });
 
 app.post('/changed', (req,res) =>{
