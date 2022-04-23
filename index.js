@@ -89,6 +89,11 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 	function num(n){ let num = parseFloat(n).toFixed(1); return num;}
 }
 
+function popup(){
+	const s = document.querySelectorAll('section')[0];
+	s.innerHTML = `<%- include('./partials/nav.ejs') %>`;
+}
+
 //rotas
 app.get('/', (req,res) => {
 	let p = pkl(pokedex);

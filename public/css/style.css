@@ -495,10 +495,22 @@ li:active{
 	background: 						rgba(0, 0, 0, 0.87);
 	position: 							absolute;
 }
-
 .pokeball div:before { left: 300%; }
 
 .pokeball div:after { left: 150%; }
+
+@keyframes mv {
+	from {
+		transform: translate(0%, 0%) scale(1) rotate(360deg);
+	}
+	to {
+		transform: translate(500%, -500%) scale(5) rotate(0deg);
+	}
+}
+
+.pokeball>img{
+	animation:							mv 3s infinite cubic-bezier(1, 2.5, 0, 0.5) alternate;
+}
 
 div#sensor{
 	height: 							12%;
@@ -517,11 +529,6 @@ div#dot{
     flex-direction: 					row;
 }
 
-@keyframes clr {
-	50% {
-		background: 					grey;
-	}
-}
 div#dot>div{
 	height: 							100%;
 	aspect-ratio: 						1;
@@ -549,7 +556,6 @@ div#dot:before,div#dot:after{
 div#dot:before { left: 350%; animation-delay: -1.5s;background: red; }
 
 div#dot:after { left: -350%; background: lime; }
-
 
 footer{
 	position:							relative;

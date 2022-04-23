@@ -28,36 +28,36 @@
 				</div>
 				<div id='pokedet'>
 					<div class='dets'>
-							<div class='detail'>
+						<div class='detail'>
+							<div>
+								<img src="<%= pokemon.picture%>" alt="<%= pokemon.name%>'s picture">
 								<div>
-									<img src="<%= pokemon.picture%>" alt="<%= pokemon.name%>'s picture">
-									<div>
-										<h1>Name: <%= pokemon.name%></h1>
-										<h2>Type: <%= pokemon.type%></h2>
-										<h2>Category: <%= pokemon.category%></h1>
-										<h2>Height: <%= pokemon.height%>m</h2>
-										<h2>Weight: <%= pokemon.weight%>Kg</h2>
-									</div>
+									<h1>Name: <%= pokemon.name%></h1>
+									<h2>Type: <%= pokemon.type%></h2>
+									<h2>Category: <%= pokemon.category%></h1>
+									<h2>Height: <%= pokemon.height%>m</h2>
+									<h2>Weight: <%= pokemon.weight%>Kg</h2>
 								</div>
-								<div>
-									<div>
-										<div>
-											<h2>Abilities</h2>
-											<% pokemon.abilities.forEach((a) =>{ %>
-											<h3><%= a%></h3>
-											<% }) %>
-										</div>
-										<div>
-											<h2>Weaknesses</h2>
-											<% pokemon.weaknesses.forEach((w) =>{ %>
-											<h3><%= w%></h3>
-											<% }) %>
-										</div>
-									</div>
-								</div>
-								<p><%= pokemon.description%></p>
-								<button onclick="window.location.href='/changing/<%= pokemon.id %>'">Change</button>
 							</div>
+							<div>
+								<div>
+									<div>
+										<h2>Abilities</h2>
+										<% pokemon.abilities.forEach((a) =>{ %>
+										<h3><%= a%></h3>
+										<% }) %>
+									</div>
+									<div>
+										<h2>Weaknesses</h2>
+										<% pokemon.weaknesses.forEach((w) =>{ %>
+										<h3><%= w%></h3>
+										<% }) %>
+									</div>
+								</div>
+							</div>
+							<p><%= pokemon.description%></p>
+							<button onclick="window.location.href='/changing/<%= pokemon.id %>'">Change</button>
+						</div>
 					</div>
 				</div>
 			</section>
