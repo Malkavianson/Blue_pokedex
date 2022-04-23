@@ -533,6 +533,10 @@ div#dot{
     flex-direction: 					row;
 }
 
+@keyframes clr {
+	50% { background:						gray; }
+}
+
 div#dot>div{
 	height: 							100%;
 	aspect-ratio: 						1;
@@ -541,8 +545,8 @@ div#dot>div{
 	border-style: 						ridge groove groove ridge;
 	border-color: 						white;
     border-radius: 						10vh;
-	animation: 							clr 3s infinite;
-	animation-delay: 					-0.75s;
+	animation: 							clr 1.5s infinite;
+	animation-delay: 					-0.5s;
 }
 
 div#dot:before,div#dot:after{
@@ -554,10 +558,10 @@ div#dot:before,div#dot:after{
 	border-color: 						white;
     border-radius: 						10vh;
     margin: 							2% 3%;
-	animation: 							clr 3s infinite;
+	animation: 							clr 1.5s infinite;
 }
 
-div#dot:before { left: 350%; animation-delay: -1.5s;background: red; }
+div#dot:before { left: 350%; animation-delay: -1s;background: red; }
 
 div#dot:after { left: -350%; background: lime; }
 
