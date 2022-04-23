@@ -266,6 +266,8 @@ div#pokedet{
 	transition:							transform 0.2s ease-out;
 }
 .detail,.changings{
+	height:								100%;
+	width:								100%;
 	display: 							flex;
 	background:							#e1e3db;
 	flex-direction: 					column;
