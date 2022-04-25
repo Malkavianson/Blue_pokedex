@@ -1,5 +1,8 @@
 let names = [];
 
+function popup(){
+	document.getElementById('p').style.display = 'flex';
+}
 
 function wdPokemon(){
 	if (window.matchMedia('(orientation: landscape)').matches) { 

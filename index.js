@@ -130,18 +130,18 @@ app.post('/changed', (req,res) =>{
 					pokemon[k] = pkm[k].toString();
 				};
 			};
-			const newPoke = new Pokemon(pokemon.name, pokemon.type, pokemon.description, pokemon.height, pokemon.weight, pokemon.category, pokemon.abilities, pokemon.weaknesses, pokemon.picture, pokedex);
+			const newPoke = new Pokemon(pokemon.name, pokemon.type, pokemon.description, pokemon.height, pokemon.weight, pokemon.category, pokemon.abilities.split(','), pokemon.weaknesses.split(','), pokemon.picture, pokedex);
 			newPoke.id = pkm.id;
 			pokedex[i] = newPoke;
 			console.log(`${newPoke.name} was changed`);
 
 		};
 	};
-	res.redirect(`/details/${pokemon.id}`);
+	setTimeout(() => { res.redirect(`/details/${pokemon.id}`); }, 5000);
 });
 app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
-	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
+	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities.split(','), weaknesses.split(','), picture, pokedex);
 	let n = true;
 	for(let pk of pokedex){
 		if(pk.name === pokemon.name){

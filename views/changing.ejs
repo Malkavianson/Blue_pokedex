@@ -12,6 +12,7 @@
 	</head>
 	
 	<body>
+		<%- include('./partials/popup.ejs') %>
 		<%- include('./partials/header.ejs') %>
 		<main>
 			<section id='details'>
@@ -76,7 +77,7 @@
 											<input type='url' id='picture' name='picture' value='<%= pokemon.picture%>'>
 										</div>
 										<div>
-											<button id='recordBtn' type='submit'>Record</button>
+											<button id='recordBtn' type='submit' onclick='popup()'>Record</button>
 										</div>
 									</form>
 								</div>
