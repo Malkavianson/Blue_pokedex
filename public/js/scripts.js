@@ -123,6 +123,7 @@ class validation {
 
         if(valid === true) {
             this.form.submit();
+			document.getElementById('p').style.display = 'flex';
         }
     }
 

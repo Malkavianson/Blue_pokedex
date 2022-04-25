@@ -141,11 +141,21 @@ app.post('/changed', (req,res) =>{
 });
 app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
-	const pokemon = new Pokemon(name.trim(), type.trim(), description, height, weight, category.trim(), abilities.split(','), weaknesses.split(','), picture, pokedex);
+	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
 	let n = true;
-	console.log(`${pokemon.name} added successfully`);
-	pokedex.push(pokemon);
-	res.redirect("/");
+	for(let pk of pokedex){
+		if(pk.name === pokemon.name){
+			console.log(`${pk.name} is already included`);
+			n = false;
+			break;
+		}
+	}
+	if(n){
+		console.log(`${pokemon.name} added successfully`);
+		pokedex.push(pokemon);
+	}
+
+	setTimeout(() => { res.redirect("/"); }, 5000);
 });
 
 app.listen(PORT, () => {console.clear(); console.log(`Server in http://localhost:${PORT}`)});

@@ -499,16 +499,16 @@ li:active{
 	background: 						rgba(0, 0, 0, 0.87);
 	position: 							absolute;
 }
-.pokeball div:before { left: 300%; }
+.pokeball div:before { left: 			300%; }
 
-.pokeball div:after { left: 150%; }
+.pokeball div:after { left: 			150%; }
 
 @keyframes mv {
 	from {
-		transform: translate(-150%, 150%) scale(1) rotate(360deg);
+		transform: 						translate(-150%, 150%) scale(1) rotate(360deg);
 	}
 	to {
-		transform: translate(50%, -100%) scale(2) rotate(0deg);
+		transform: 						translate(50%, -100%) scale(2) rotate(0deg);
 	}
 }
 
@@ -561,9 +561,16 @@ div#dot:before,div#dot:after{
 	animation: 							clr 1.5s infinite;
 }
 
-div#dot:before { left: 350%; animation-delay: -1s;background: red; }
+div#dot:before { 
+	left: 								350%;
+	animation-delay: 					-1s;
+	background: 						red;
+}
 
-div#dot:after { left: -350%; background: lime; }
+div#dot:after { 
+	left: 								-350%; 
+	background: 						lime; 
+}
 
 div#btn{
 	height:								5%;
@@ -572,21 +579,74 @@ div#btn{
 
 @keyframes mvc {
     0% {
-        transform: scale(1.03) rotate(0.3deg);
+        transform: 						scale(1.03) rotate(0.3deg);
     }
     25% {
-        transform: scale(1.05) rotate(-0.3deg);
+        transform: 						scale(1.05) rotate(-0.3deg);
     }
     50% {
-        transform: scale(1.04) rotate(0.3deg);
+        transform: 						scale(1.04) rotate(0.3deg);
     }
     75% {
-        transform: scale(1.02) rotate(-0.3deg);
+        transform: 						scale(1.02) rotate(-0.3deg);
     }
     100% {
-        transform: scale(1) rotate(0deg);
+        transform: 						scale(1) rotate(0deg);
     }
 }
+
+section#p{
+	position: 							absolute;
+	height:								100%;
+	width:								100%;
+	display:							none;
+	justify-content: 					center;
+	align-items: 						center;
+	background: 						rgba( 255, 255, 255, 0.1);
+	backdrop-filter: 					blur( 0.4rem );
+	-webkit-backdrop-filter: 			blur( 0.4rem );
+}
+
+article#popup{
+	height: 							35%;
+	width: 								50%;
+	background: 						rgba( 190, 70, 50, 0.6);
+	backdrop-filter: 					blur( 0.5rem );
+	-webkit-backdrop-filter: 			blur( 0.5rem );
+	display: 							flex;
+	flex-direction: 					column;
+	align-content: 						center;
+	justify-content: 					center;
+	align-items: 						center;
+	border-width: 						0.4vw;
+	border-style: 						ridge groove groove ridge;
+	border-color: 						white;
+    border-radius: 						0.5vh;
+}
+article#popup>div{
+	display: 							flex;
+	height: 							49.5%;
+	width: 								99%;
+	flex-direction:						column;
+	justify-content: 					space-around;
+	align-items: 						center;
+	text-align: 						center;
+	text-shadow: 						-0.4rem 0.4rem 0.5rem white;
+	text-transform: 					uppercase;
+	text-decoration: 					underline;
+}
+
+button#cPopup{
+	height: 							40%;
+	width: 								55%;
+	background: 						#ff1457;
+	border-width: 						0.4vw;
+	border-style: 						ridge solid double solid;
+	border-color: 						gray;
+    border-radius: 						5vh;
+	
+}
+
 
 footer{
 	position:							relative;
