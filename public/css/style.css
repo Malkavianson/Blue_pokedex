@@ -570,6 +570,24 @@ div#btn{
 	gap:								10%;
 }
 
+@keyframes mvc {
+    0% {
+        transform: scale(1.03) rotate(0.3deg);
+    }
+    25% {
+        transform: scale(1.05) rotate(-0.3deg);
+    }
+    50% {
+        transform: scale(1.04) rotate(0.3deg);
+    }
+    75% {
+        transform: scale(1.02) rotate(-0.3deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
 footer{
 	position:							relative;
 	height:								5%;

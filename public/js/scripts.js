@@ -1,4 +1,6 @@
-// Slide de Smartphone
+let names = [];
+
+
 function wdPokemon(){
 	if (window.matchMedia('(orientation: landscape)').matches) { 
 		return 0.3
@@ -36,7 +38,6 @@ slides.forEach((slide, index) => {
 
 });
 
-//desativar o menu de contexto
 if(document.querySelector('#deck')!=null){
 	document.querySelector('#deck').oncontextmenu = function(event){
 		event.preventDefault();
@@ -104,4 +105,53 @@ function changing(i){
 	setPositionByIndex();
 }
 
-//Slide de Smartphone - end
+class validation {
+    constructor() {
+        this.form = document.querySelector('#enterPoke');
+        this.events();
+    }
+  
+    events() {
+        this.form.addEventListener('submit', e => {
+        this.handleSubmit(e);
+      });
+    }
+  
+    handleSubmit(e) {
+        e.preventDefault();
+        const valid = this.validPoke();
+
+        if(valid === true) {
+            this.form.submit();
+        }
+    }
+
+    validPoke() {
+        const pokemon = this.form.querySelector("#name");
+        const text = `${pokemon.value} is already included`;
+        let registred = false;
+
+        for(let name of names) {
+            if(name.toLowerCase() === pokemon.value.toLowerCase()){
+                pokemon.value = "";
+                pokemon.placeholder = text;
+                pokemon.style.animation = "mvc .3s linear 1 backwards";
+                pokemon.addEventListener("webkitAnimationEnd", () => pokemon.style.animation = null);
+                pokemon.addEventListener("animationend", () => pokemon.style.animation = null);
+                registred = true;
+                break;
+            }
+        }
+
+        if(registred === false) {
+            return true;
+        }
+
+        return false
+    }
+}
+  
+if(document.querySelector("#enterPoke")){
+    const valid = new validation();
+	names = pk.map((e) => e.name)
+}

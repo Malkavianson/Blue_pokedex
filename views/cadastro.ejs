@@ -9,6 +9,11 @@
 		
 		<link rel='stylesheet' href='css/style.css'>
 
+		<script type='text/javascript'>
+			const pkd = `<%- JSON.stringify(pokedex) %>`;        
+			const pk = JSON.parse(pkd);
+		</script>
+
 	</head>
 	
 	<body>
@@ -16,7 +21,7 @@
 		<main>
 			<section id='cadastro'>
 				<h2>Register a new pokemon!</h2>
-				<form action='/include' method='POST'>
+				<form id='enterPoke' action='/include' method='POST'>
 					<div>
 						<div>
 							<label for='name'>Name:</label>

@@ -95,7 +95,7 @@ app.get('/', (req,res) => {
 	res.render ('index', {p});
 });
 app.get('/register', (req,res) => {
-	res.render ('cadastro');
+	res.render ('cadastro', {pokedex});
 });
 app.get('/details/:id', (req,res) => {
 	let p = pkl(pokedex);
@@ -143,17 +143,8 @@ app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
 	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
 	let n = true;
-	for(let pk of pokedex){
-		if(pk.name === pokemon.name){
-			console.log(`${pk.name} is already included`);
-			n = false;
-			break;
-		}
-	}
-	if(n){
-		console.log(`${pokemon.name} added successfully`);
-		pokedex.push(pokemon);
-	}
+	console.log(`${pokemon.name} added successfully`);
+	pokedex.push(pokemon);
 	res.redirect("/");
 });
 
