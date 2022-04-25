@@ -132,7 +132,7 @@ class validation {
         let registred = false;
 
         for(let name of names) {
-            if(name.toLowerCase() === pokemon.value.toLowerCase()){
+            if(name.toLowerCase() === pokemon.value.toLowerCase().trim()){
                 pokemon.value = "";
                 pokemon.placeholder = text;
                 pokemon.style.animation = "mvc .3s linear 1 backwards";

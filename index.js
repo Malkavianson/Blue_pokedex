@@ -27,13 +27,13 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 	Object.defineProperties(this, {
 		name: {
 			enumerable: true,
-			value: n,
+			value: n.charAt(0).toUpperCase() + n.substring(1).toLowerCase(),
 			writable: true,
 			configurable: true,
 		},
 		type: {
 			enumerable: true,
-			value: t,
+			value: t.charAt(0).toUpperCase() + t.substring(1).toLowerCase(),
 			writable: true,
 			configurable: true,
 		},
@@ -57,19 +57,19 @@ function Pokemon(n, t, d, h, w, c, a, wk, p, pk) {
 		},
 		category: {
 			enumerable: true,
-			value: c,
+			value: c.charAt(0).toUpperCase() + c.substring(1).toLowerCase(),
 			writable: true,
 			configurable: true,
 		},
 		abilities: {
 			enumerable: true,
-			value: a.split(','),
+			value: a,
 			writable: true,
 			configurable: true,
 		},
 		weaknesses: {
 			enumerable: true,
-			value: wk.split(','),
+			value: wk,
 			writable: true,
 			configurable: true,
 		},
@@ -141,7 +141,7 @@ app.post('/changed', (req,res) =>{
 });
 app.post('/include', (req,res) => {
 	const { name, type, description, height, weight, category, abilities, weaknesses, picture	} = req.body;
-	const pokemon = new Pokemon(name, type, description, height, weight, category, abilities, weaknesses, picture, pokedex);
+	const pokemon = new Pokemon(name.trim(), type.trim(), description, height, weight, category.trim(), abilities.split(','), weaknesses.split(','), picture, pokedex);
 	let n = true;
 	console.log(`${pokemon.name} added successfully`);
 	pokedex.push(pokemon);
